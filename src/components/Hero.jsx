@@ -7,10 +7,10 @@ const Hero = ({
   return (
     <>
       <div className="relative h-auto w-auto flex flex-col">
-        <div className="bg-theme clip-path"></div>
+        <div className="bg-theme clip-path h-[85vh] lg:h-[75vh] md:h-[65vh] sm:h-[55vh] w-auto absolute top-0 left-0 right-0 opacity-100 z-10"></div>
         <div className="">
           <div className="">
-            <h1>{title}</h1>
+            <h1 className="text-red-700 ">{title}</h1>
             <h1>{subtitle}</h1>
             <button>{btntext}</button>
             {/* <div className=""></div> */}
