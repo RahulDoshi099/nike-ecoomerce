@@ -83,18 +83,21 @@ const CartSlice = createSlice({
     },
 
     setGetTotals: (state, action) => {
-      let { totalAmount, totalQTY } = state.cartItems.reduce((cartTotal, cartItem)=> {
-        const { price, cartQuantity } = cartItem;
-        const totalPrice = price * cartQuantity;
+      let { totalAmount, totalQTY } = state.cartItems.reduce(
+        (cartTotal, cartItem) => {
+          const { price, cartQuantity } = cartItem;
+          const totalPrice = price * cartQuantity;
 
-        cartTotal.totalAmount += totalPrice;
-        cartTotal.totalQTY += cartQuantity;
+          cartTotal.totalAmount += totalPrice;
+          cartTotal.totalQTY += cartQuantity;
 
-        return cartTotal;
-      }, {
-        totalAmount: 0,
-        totalQTY: 0,
-      });
+          return cartTotal;
+        },
+        {
+          totalAmount: 0,
+          totalQTY: 0,
+        }
+      );
 
       state.cartTotalAmount = totalAmount;
       state.cartTotalQantity = totalQTY;
@@ -110,7 +113,7 @@ export const {
   setIncreaseItemQTY,
   setDecreaseItemQTY,
   setClearCartItems,
-  setGetTotals
+  setGetTotals,
 } = CartSlice.actions;
 
 export const selectCartState = (state) => state.cart.cartState;
