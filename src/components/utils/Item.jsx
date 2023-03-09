@@ -1,8 +1,9 @@
 import React from "react";
 // import { useDispatch } from "react-redux";
 
-// import { StarIcon, ShoppingBagIcon } from "@heroicons/react/24/solid";
-// import { setAddItemToCart, setOpenCart } from "../../app/CartSlice";
+import { StarIcon, ShoppingBagIcon } from "@heroicons/react/24/solid";
+import {setOpenCart,setAddItemToCart } from "../../app/CartSlice";
+import { useDispatch } from "react-redux";
 
 const Item = ({
   ifExists,
@@ -17,19 +18,18 @@ const Item = ({
   price,
 }) => {
   //   console.log(id)
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-//   const onAddToCart = () => {
-//     const item = { id, title, text, img, color, shadow, price };
+  const onAddToCart = () => {
+    const item = { id, title, text, img, color, shadow, price };
+    dispatch(setAddItemToCart(item));
+  };
 
-//     dispatch(setAddItemToCart(item));
-//   };
-
-//   const onCartToggle = () => {
-//     dispatch(setOpenCart({
-//         cartState: true
-//     }))
-// }
+  const onCartToggle = () => {
+    dispatch(setOpenCart({
+        cartState: true
+    }))
+}
 
   return (
     <>
@@ -55,7 +55,7 @@ const Item = ({
               <h1 className="text-black text-sm font-medium">${price}</h1>
             </div>
             <div className="flex items-center gap-1">
-              {/* <StarIcon className="icon-style w-5 h-5 md:w-4 md:h-4" /> */}
+              <StarIcon className="icon-style w-5 h-5 md:w-4 md:h-4" />
               <h1 className="md:text-sm font-normal text-slate-100">
                 {rating}
               </h1>
@@ -68,7 +68,7 @@ const Item = ({
               className="bg-white/90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200"
               onClick={()=> onAddToCart()}
             >
-              {/* <ShoppingBagIcon className="icon-style text-slate-900" /> */}
+              <ShoppingBagIcon className="icon-style text-slate-900" />
             </button>
             <button
               type="button"

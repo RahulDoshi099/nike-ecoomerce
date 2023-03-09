@@ -9,11 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.16",
+    "@reduxjs/toolkit": "^1.9.3",
+    "@splidejs/react-splide": "^0.7.12",
     "autoprefixer": "^10.4.13",
     "heroicons": "^2.0.16",
+    "lodash": "^4.17.21",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.0",
     "react-redux": "^8.0.5"
   },
   "devDependencies": {
